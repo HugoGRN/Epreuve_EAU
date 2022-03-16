@@ -2,20 +2,20 @@
 
 array = ARGV.map(&:to_i)
 
-def bubble_sort(list)
+def trie_bulle(liste)
     loop do
-      swapped = false
-      0.upto(list.length-2) do |i|
-        if list[i] > list[i+1]
-          list[i], list[i+1] = list[i+1], list[i]
-          swapped = true
+      swap = false
+      0.upto(liste.length-2) do |i|
+        if liste[i] > liste[i+1]
+          liste[i], liste[i+1] = liste[i+1], liste[i]
+          swap = true
         end
       end
-      break unless swapped
+      break unless swap
     end  
-    list.join(' ')
+    liste.join(' ')
 end
 
 (puts "Error"; exit) if ARGV[0].match?(/\D/)
 
-puts bubble_sort(array)
+puts trie_bulle(array)
